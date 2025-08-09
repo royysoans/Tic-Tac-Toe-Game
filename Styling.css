@@ -1,0 +1,100 @@
+body{
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    text-align: center;
+    color: #e0f7fa;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    height:100vh;
+}
+
+h1{
+    text-align: center;
+    color:#00e5ff;
+}
+
+.container{
+    height:70vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.GameBox{
+    height:60vmin;
+    width:60vmin;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:1.5vmin;
+}
+
+.cell{
+    height:18vmin;
+    width:18vmin;
+    border-radius:1rem;
+    font-size:8vmin;
+    background-color:rgba(255, 255, 255, 0.08);
+    color: #00e5ff;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    transition: transform 0.15s ease, box-shadow 0.3s ease;
+}
+
+.cell:hover{
+    transform:scale(1.1);
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+.Restart{
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #00e5ff;
+    border-radius: 1.5rem;
+    border: 2px solid #00e5ff; 
+    transition: transform 0.25s ease-in-out, box-shadow 0.3s ease;
+}
+
+.Restart:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00e5ff; 
+}
+
+.Message{
+    text-align: center;
+    font-size:1.5rem;
+    font-weight:700;
+    color:#00ffea; 
+    opacity:0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.Message.show {
+    opacity: 1;
+}
+
+.hide{
+    display:none;
+}
+
+@keyframes winnerGlow {
+    0% { box-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff; }
+    50% { box-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff; }
+    100% { box-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff; }
+}
+
+.winner-cell {
+    animation: winnerGlow 1s infinite;
+    background-color: rgba(0, 229, 255, 0.1) ;
+}
+
+@media (max-width: 600px) {
+    .GameBox {
+        height: 90vmin;
+        width: 90vmin;
+    }
+    .cell {
+        height: 25vmin;
+        width: 25vmin;
+        font-size: 10vmin;
+    }
+}
